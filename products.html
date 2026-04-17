@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SK Polymers Products - Explore our range of high-quality plastic bottles and packaging solutions for the pharmaceutical and nutraceutical industries.">
+    <title>Products | SK Polymers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">SK Polymers</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="index.html#vision">Vision</a></li>
+                <li><a href="index.html#mission">Mission</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Header -->
+    <section class="products-header">
+        <div class="container">
+            <h1 class="products-title">Our Products</h1>
+            <p class="products-subtitle">
+                Explore our range of precision-crafted plastic bottles and containers,
+                engineered for the pharmaceutical and nutraceutical industries.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="section products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Product cards are rendered by script.js -->
+            </div>
+            <p class="products-empty" id="productsEmpty" hidden>
+                No products to display yet. Please check back soon.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA back to contact -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="content-box">
+                <h2 class="section-title">Interested in our products?</h2>
+                <p class="intro-text">
+                    Reach out for custom sizes, bulk orders, or product specifications.
+                    We'd love to hear from you.
+                </p>
+                <a href="index.html#contact" class="cta-button cta-button-dark">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image preview" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous product">&#8249;</button>
+        <figure class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <figcaption id="lightboxCaption"></figcaption>
+        </figure>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next product">&#8250;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 SK Polymers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
