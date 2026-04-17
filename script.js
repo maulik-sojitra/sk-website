@@ -132,7 +132,6 @@ if (productsGrid) {
                 </div>
                 <div class="product-body">
                     <div class="product-code">${product.code}</div>
-                    <div class="product-label">Plastic Container</div>
                 </div>
             `;
 
