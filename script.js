@@ -98,14 +98,55 @@ window.addEventListener('resize', function() {
  * -----------------
  * To add a new product:
  *   1. Place the image file inside the `assets/` folder.
- *   2. Add a new entry below with the file name (without extension) as the `code`.
- * The `code` becomes the displayed product code and the image is loaded from
- * `assets/<code>.png`.
+ *   2. Add a new entry below with the exact `file` name and display `code`.
  */
 const PRODUCTS = [
-    { code: 'SK - 1', ext: 'png' },
-    { code: 'SK - 2', ext: 'png' }
+    { file: '01) SK - 1.png', code: 'SK - 1' },
+    { file: '02) SK - 2.png', code: 'SK - 2' },
+    { file: '03) SK - 3.png', code: 'SK - 3' },
+    { file: '04) SK - 4.png', code: 'SK - 4' },
+    { file: '05) SK - 5.png', code: 'SK - 5' },
+    { file: '06) SK - 6.png', code: 'SK - 6' },
+    { file: '07) SK - 7.png', code: 'SK - 7' },
+    { file: '08) SK - 8.png', code: 'SK - 8' },
+    { file: '09) SK - 9.png', code: 'SK - 9' },
+    { file: '10) SK - 10.png', code: 'SK - 10' },
+    { file: '11) SK - 11.png', code: 'SK - 11' },
+    { file: '12) SK - 12.png', code: 'SK - 12' },
+    { file: '13) SK - 13.png', code: 'SK - 13' },
+    { file: '14) SK - 14.png', code: 'SK - 14' },
+    { file: '15) SK - 15.png', code: 'SK - 15' },
+    { file: '16) SK - 16.png', code: 'SK - 16' },
+    { file: '17) SK - 17.png', code: 'SK - 17' },
+    { file: '18) SK - 18.png', code: 'SK - 18' },
+    { file: '19) SK - 19.png', code: 'SK - 19' },
+    { file: '20) SK - 20.png', code: 'SK - 20' },
+    { file: '21) SK - 21.png', code: 'SK - 21' },
+    { file: '22) SK - 22.png', code: 'SK - 22' },
+    { file: '23) POWDEROM SPOON.png', code: 'POWDEROM SPOON' },
+    { file: '24) PP SPOON.png', code: 'PP SPOON' },
+    { file: '25) DOCTOR SPOON.png', code: 'DOCTOR SPOON' },
+    { file: '26) TC - 30.png', code: 'TC - 30' },
+    { file: '27) TC - 60.png', code: 'TC - 60' },
+    { file: '28) TC - 90.png', code: 'TC - 90' },
+    { file: '29) TC - 300.png', code: 'TC - 300' },
+    { file: '30) SK - 60 ML ROUND.png', code: 'SK - 60 ML ROUND' },
+    { file: '31) SK - 60 ML CYLINDRICAL.png', code: 'SK - 60 ML CYLINDRICAL' },
+    { file: '32) SK - 100 ML ROUND.png', code: 'SK - 100 ML ROUND' },
+    { file: '33) SK - 100 ML CYLINDRICAL.png', code: 'SK - 100 ML CYLINDRICAL' },
+    { file: '34) SK - 200 ML ROUND.png', code: 'SK - 200 ML ROUND' },
+    { file: '35) SK - 250 ML CYLINDRICAL.png', code: 'SK - 250 ML CYLINDRICAL' },
+    { file: '36) SK - 500 ML ROUND.png', code: 'SK - 500 ML ROUND' },
+    { file: '37) SK - 500 ML CYLINDRICAL.png', code: 'SK - 500 ML CYLINDRICAL' },
+    { file: '38) PETE - 01.png', code: 'PETE - 01' },
+    { file: '39) PETE - 02.png', code: 'PETE - 02' },
+    { file: '40) PETE - 03 350 MALT.png', code: 'PETE - 03 350 MALT' },
+    { file: '41) PETE - 04 350 MALT.png', code: 'PETE - 04 350 MALT' }
 ];
+
+function getProductImageSrc(product) {
+    return `assets/${encodeURIComponent(product.file)}`;
+}
 
 const productsGrid = document.getElementById('productsGrid');
 
@@ -118,7 +159,7 @@ if (productsGrid) {
         const fragment = document.createDocumentFragment();
 
         PRODUCTS.forEach((product, index) => {
-            const src = `assets/${encodeURIComponent(product.code)}.${product.ext}`;
+            const src = getProductImageSrc(product);
 
             const card = document.createElement('button');
             card.type = 'button';
@@ -155,7 +196,7 @@ if (productsGrid) {
         const product = PRODUCTS[index];
         if (!product) return;
         currentIndex = index;
-        const src = `assets/${encodeURIComponent(product.code)}.${product.ext}`;
+        const src = getProductImageSrc(product);
         lightboxImage.src = src;
         lightboxImage.alt = `Product ${product.code}`;
         lightboxCaption.textContent = product.code;
