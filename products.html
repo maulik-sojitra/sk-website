@@ -40,10 +40,16 @@
     </section>
 
     <!-- Products Grid -->
-    <section class="section products-section">
+    <section class="section products-section" id="productsTop">
         <div class="container">
-            <div class="products-grid" id="productsGrid">
-                <!-- Product cards are rendered by script.js -->
+            <div class="product-groups-overview" id="productGroupsOverview" aria-label="Product categories">
+                <!-- Product group overview cards are rendered by script.js -->
+            </div>
+            <nav class="product-groups-nav" id="productGroupsNav" aria-label="Product category navigation">
+                <!-- Product group navigation is rendered by script.js -->
+            </nav>
+            <div class="products-groups" id="productsGrid">
+                <!-- Grouped product cards are rendered by script.js -->
             </div>
             <p class="products-empty" id="productsEmpty" hidden>
                 No products to display yet. Please check back soon.

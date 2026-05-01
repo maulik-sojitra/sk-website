@@ -602,6 +602,160 @@ html {
     background-color: var(--bg-light);
 }
 
+.product-groups-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-group-card {
+    background-color: var(--white);
+    border: 1px solid rgba(44, 62, 80, 0.08);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+    padding: 1.25rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-group-card:hover,
+.product-group-card:focus-visible {
+    border-color: rgba(52, 152, 219, 0.35);
+    box-shadow: var(--shadow-lg);
+    outline: none;
+    transform: translateY(-4px);
+}
+
+.product-group-eyebrow,
+.product-group-label {
+    color: var(--secondary-color);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+
+.product-group-card h2 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin: 0.35rem 0 0.4rem;
+}
+
+.product-group-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: auto;
+}
+
+.product-group-preview {
+    display: flex;
+    margin: 1rem 0 0.9rem;
+}
+
+.product-group-preview-image {
+    align-items: center;
+    background-color: #f2f4f7;
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    height: 58px;
+    justify-content: center;
+    margin-right: -0.5rem;
+    overflow: hidden;
+    width: 58px;
+}
+
+.product-group-preview-image img {
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.3rem;
+    width: 100%;
+}
+
+.product-group-count,
+.product-group-total {
+    align-self: flex-start;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 999px;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+}
+
+.product-groups-nav {
+    align-items: center;
+    display: flex;
+    gap: 0.65rem;
+    margin: 0 0 2.25rem;
+    overflow-x: auto;
+    padding: 0.35rem 0 0.75rem;
+    position: sticky;
+    scrollbar-width: thin;
+    top: 74px;
+    z-index: 20;
+}
+
+.product-group-chip {
+    background-color: var(--white);
+    border: 1px solid rgba(44, 62, 80, 0.12);
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--primary-color);
+    flex: 0 0 auto;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0.65rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.product-group-chip:hover,
+.product-group-chip:focus-visible {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+    outline: none;
+}
+
+.products-groups {
+    display: grid;
+    gap: 3rem;
+}
+
+.product-group-section {
+    scroll-margin-top: 140px;
+}
+
+.product-group-heading {
+    align-items: flex-end;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.product-group-heading h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 1.25;
+    margin: 0.2rem 0 0.25rem;
+}
+
+.product-group-heading p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -824,6 +978,34 @@ body.lightbox-open {
         padding: 2.5rem 0 3.5rem;
     }
 
+    .product-groups-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-group-card {
+        min-height: 210px;
+        padding: 1rem;
+    }
+
+    .product-groups-nav {
+        margin-bottom: 1.75rem;
+        top: 66px;
+    }
+
+    .product-group-section {
+        scroll-margin-top: 128px;
+    }
+
+    .product-group-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .product-group-heading h2 {
+        font-size: 1.55rem;
+    }
+
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 1rem;
@@ -869,6 +1051,23 @@ body.lightbox-open {
 
     .products-subtitle {
         font-size: 0.95rem;
+    }
+
+    .product-groups-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .product-group-card {
+        min-height: auto;
+    }
+
+    .product-group-chip {
+        font-size: 0.85rem;
+        padding: 0.55rem 0.85rem;
+    }
+
+    .products-groups {
+        gap: 2.35rem;
     }
 
     .products-grid {
