@@ -988,8 +988,18 @@ body.lightbox-open {
     }
 
     .product-groups-nav {
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         margin-bottom: 1.75rem;
+        overflow-x: visible;
+        position: static;
         top: 66px;
+    }
+
+    .product-group-chip {
+        text-align: center;
+        white-space: normal;
     }
 
     .product-group-section {
