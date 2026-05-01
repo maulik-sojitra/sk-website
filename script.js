@@ -62,16 +62,20 @@ window.addEventListener('scroll', function () {
 });
 
 // Fade in animation on scroll
+// Use threshold: 0 so sections taller than the viewport (e.g. the products
+// catalog) still trigger the reveal, since they can never reach a higher
+// intersection ratio than viewport_height / section_height.
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function (entries) {
+const observer = new IntersectionObserver(function (entries, obs) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            obs.unobserve(entry.target);
         }
     });
 }, observerOptions);
