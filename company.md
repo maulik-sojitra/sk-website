@@ -1,4 +1,4 @@
-# SK Polymers
+# SK POLYMERS
 
 ## Front Cover Page
 
